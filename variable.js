@@ -46,7 +46,6 @@ Constraints:
 1 <= nums.length <= 1000
 -10^6 <= nums[i] <= 10^6
 
-*/
 
 
 var runningSum = function(nums) {
@@ -59,3 +58,27 @@ var runningSum = function(nums) {
 };
 
 runningSum([3,1,2,10,1]);
+
+
+
+*/
+
+
+
+var runningSum = function(nums) {
+    let sum=0;
+    let array=[];
+
+    nums.map((value)=>{
+        sum+=value;
+         array.push(sum);
+    })
+    return array;
+};
+
+
+
+
+ runningSum([1,2,3,4]);
+ runningSum([1,1,1,1,1]);
+ runningSum([3,1,2,10,1]);
