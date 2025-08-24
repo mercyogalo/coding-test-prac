@@ -34,28 +34,75 @@ compete("regan");
 */
 
 //Write a function removeDuplicates that takes an array of integers and returns a new array with duplicates removed, keeping the original order.
-let count=[];
-let  removeDuplicates=(data)=>[...new Set(data)];
+
+//let  removeDuplicates=(data)=>[...new Set(data)];
+
 /*
-let removeDuplicates=(data)=>{
-     for(let i=0;i<data.length; i++){
-     duplicateCheck(data[i]);
-    }
-    console.log(count);
+let count=[];
+
+function removeDuplicates(value){
+for (let index = 0; index < value.length; index++) {
+   dupliicateCheck(value[index]);  
 }
-let duplicateCheck=(value)=>{
-    for(let i=0;i<count.length;i++){
-           if(value!==count[i]) {
-            console.log(value);
-           return  count.push(value);
-           }
-        }
+console.log(count);
 }
 
+let dupliicateCheck=(data)=>{
+
+   if(count.length==0){
+           count.push(data);
+            }
+
+            else{
+
+     let exists=false;
+
+    for (let index = 0; index < count.length; index++) {
+                    
+             if (data===count[index]) {
+                exists=true;
+                break;
+            }
+        }
+
+          if (!exists) {
+                count.push(data);
+            }
+
+        }
+
+}
+
+removeDuplicates([1, 2, 3, 2, 4, 1, 5]);
+
+
+//Write a function twoSum that takes an array of integers nums and a target integer target.
+The function should return an array of the two indices whose numbers add up to target.
+Assume there is exactly one solution, and you may not use the same element twice.
 */
 
+function twoSum(nums, target){
+//add the first value to all the remaining numbers in the array
+//and if none add up to target move to the next
 
+ for (let index=0; index<nums.length; index++){
+        let sum=nums[index]+ nums[displayValues(nums,index++)];
+        
+        if(sum===target){
+         return nums[index]+ nums[displayValues(index)];
+        }
+      
+ }
+ 
 
+}
 
+let displayValues=(nums,value)=>{
+     for (let index=value; index<nums.length; index++){
+        return index;
+}
+}
 
-console.log(removeDuplicates([1, 2, 3, 2, 4, 1, 5]));
+twoSum([2, 7, 11, 15],9);
+
+twoSum([8, 1, 12, 5],17);
